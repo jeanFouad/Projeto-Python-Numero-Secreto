@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>adivinhacao.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+adivinhacao.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">random</span>
+
+<span class="s1">print </span><span class="s2">(</span><span class="s3">&quot;=========================&quot;</span><span class="s2">)</span>
+<span class="s1">print </span><span class="s2">(</span><span class="s3">&quot;   JOGO DE ADIVINHAÇÃO   &quot;</span><span class="s2">)</span>
+<span class="s1">print </span><span class="s2">(</span><span class="s3">&quot;=========================&quot;</span><span class="s2">)</span>
+
+<span class="s1">numero_secreto </span><span class="s2">= </span><span class="s1">random</span><span class="s2">.</span><span class="s1">randrange</span><span class="s2">(</span><span class="s4">1</span><span class="s2">,</span><span class="s4">101</span><span class="s2">)</span>
+<span class="s1">total_de_tentativas</span><span class="s2">: </span><span class="s1">int </span><span class="s2">= </span><span class="s4">0</span>
+<span class="s1">pontos </span><span class="s2">= </span><span class="s4">100</span>
+
+<span class="s1">print </span><span class="s2">(</span><span class="s3">&quot;Escolha entre os Niveis Abaixo&quot;</span><span class="s2">)</span>
+<span class="s1">print </span><span class="s2">(</span><span class="s3">&quot;(1) Facíl (2) Médio (3) Dificíl&quot; </span><span class="s2">)</span>
+<span class="s1">nivel </span><span class="s2">= </span><span class="s1">int</span><span class="s2">(</span><span class="s1">input </span><span class="s2">(</span><span class="s3">&quot;Defina o Nivel: &quot;</span><span class="s2">))</span>
+
+<span class="s0">if </span><span class="s2">(</span><span class="s1">nivel </span><span class="s2">== </span><span class="s4">1</span><span class="s2">):</span>
+    <span class="s1">total_de_tentativas </span><span class="s2">= </span><span class="s4">20</span>
+<span class="s0">elif </span><span class="s2">(</span><span class="s1">nivel </span><span class="s2">== </span><span class="s4">2</span><span class="s2">):</span>
+    <span class="s1">total_de_tentativas </span><span class="s2">= </span><span class="s4">10</span>
+<span class="s0">else</span><span class="s2">:</span>
+    <span class="s1">total_de_tentativas </span><span class="s2">= </span><span class="s4">5</span>
+
+<span class="s0">for </span><span class="s1">rodada </span><span class="s0">in </span><span class="s1">range</span><span class="s2">(</span><span class="s4">1</span><span class="s2">, </span><span class="s1">total_de_tentativas </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">):</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Tentativa {} de {}&quot;</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s1">rodada</span><span class="s2">, </span><span class="s1">total_de_tentativas</span><span class="s2">))</span>
+
+    <span class="s1">chute_str </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">&quot;Digite um número entre 1 e 100: &quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Você digitou &quot; </span><span class="s2">, </span><span class="s1">chute_str</span><span class="s2">)</span>
+    <span class="s1">chute </span><span class="s2">= </span><span class="s1">int</span><span class="s2">(</span><span class="s1">chute_str</span><span class="s2">)</span>
+
+    <span class="s0">if</span><span class="s2">(</span><span class="s1">chute </span><span class="s2">&lt; </span><span class="s4">1 </span><span class="s0">or </span><span class="s1">chute </span><span class="s2">&gt; </span><span class="s4">100</span><span class="s2">):</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Você deve digitar um número entre 1 e 100!&quot;</span><span class="s2">)</span>
+        <span class="s0">continue</span>
+
+    <span class="s1">acertou </span><span class="s2">= </span><span class="s1">chute </span><span class="s2">== </span><span class="s1">numero_secreto</span>
+    <span class="s1">maior   </span><span class="s2">= </span><span class="s1">chute </span><span class="s2">&gt; </span><span class="s1">numero_secreto</span>
+    <span class="s1">menor   </span><span class="s2">= </span><span class="s1">chute </span><span class="s2">&lt; </span><span class="s1">numero_secreto</span>
+
+    <span class="s0">if</span><span class="s2">(</span><span class="s1">acertou</span><span class="s2">):</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Você acertou!&quot;</span><span class="s2">)</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Voce acertou e fez {} pontos !&quot;</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s1">pontos</span><span class="s2">))</span>
+        <span class="s0">break</span>
+    <span class="s0">else</span><span class="s2">:</span>
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">maior</span><span class="s2">):</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Você errou! O seu chute foi maior do que o número secreto.&quot;</span><span class="s2">)</span>
+        <span class="s0">elif</span><span class="s2">(</span><span class="s1">menor</span><span class="s2">):</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Você errou! O seu chute foi menor do que o número secreto.&quot;</span><span class="s2">)</span>
+        <span class="s1">pontos_perdidos </span><span class="s2">= </span><span class="s1">abs</span><span class="s2">(</span><span class="s1">numero_secreto </span><span class="s2">- </span><span class="s1">chute</span><span class="s2">) </span><span class="s5">#abs = numero absoluto</span>
+        <span class="s1">pontos </span><span class="s2">= </span><span class="s1">pontos </span><span class="s2">- </span><span class="s1">pontos_perdidos</span>
+
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Fim do jogo&quot;</span><span class="s2">)</span>
+</pre>
+</body>
+</html>
