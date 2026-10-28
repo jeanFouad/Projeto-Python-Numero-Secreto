@@ -1,0 +1,155 @@
+{
+  "_como_usar": "Lista das tags que o scanner procura. Para incluir uma tag nova, copie um bloco e troque os campos. gravidade: critica | alta | media. buscar_na_pagina: true quando a tag só aparece no código da página do anúncio (F12), não na API. motivo_oficial: true para buscar o motivo escrito pelo ML na moderação do anúncio.",
+  "tags": [
+    {
+      "tag": "has_limited_marketplace_visibility",
+      "nome": "Visibilidade limitada no marketplace",
+      "gravidade": "critica",
+      "descricao": "O anúncio aparece menos na busca e nas vitrines. O ML não documenta publicamente o critério dessa tag.",
+      "acao": "Corrigir o que a moderação apontar. Se a tag não sair, refazer o anúncio: a visibilidade dele já foi perdida.",
+      "buscar_na_pagina": true,
+      "motivo_oficial": true
+    },
+    {
+      "tag": "moderation_penalty",
+      "nome": "Penalidade de moderação",
+      "gravidade": "critica",
+      "descricao": "O ML aplicou uma penalidade por algo fora das regras (pode reduzir exposição ou pausar o anúncio).",
+      "acao": "Corrigir o que o motivo do ML aponta e reativar. Se a penalidade persistir, refazer o anúncio.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": true
+    },
+    {
+      "tag": "misplaced_personal_data",
+      "nome": "Dados pessoais indevidos",
+      "gravidade": "alta",
+      "descricao": "Telefone, e-mail, site ou outro contato no título, fotos ou descrição.",
+      "acao": "Remover os dados de contato do título, das fotos e da descrição.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "catalog_forewarning",
+      "nome": "Aviso de catálogo",
+      "gravidade": "alta",
+      "descricao": "O ML avisou que o anúncio precisa entrar no catálogo; sem isso ele pode perder exposição.",
+      "acao": "Associar o anúncio ao produto de catálogo correto.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "not_market_price",
+      "nome": "Preço fora de mercado",
+      "gravidade": "alta",
+      "descricao": "O preço está muito acima do praticado para o mesmo produto.",
+      "acao": "Rever o preço comparando com a concorrência e o preço para ganhar a buy box.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "poor_quality_thumbnail",
+      "nome": "Capa de baixa qualidade",
+      "gravidade": "media",
+      "descricao": "A primeira foto não atende ao padrão do ML (resolução, fundo, enquadramento).",
+      "acao": "Trocar a capa por uma foto nítida, fundo branco, mínimo 1200x1200.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "poor_quality_picture",
+      "nome": "Fotos de baixa qualidade",
+      "gravidade": "media",
+      "descricao": "Uma ou mais fotos têm resolução ou qualidade baixa.",
+      "acao": "Substituir as fotos fracas por imagens de pelo menos 1200x1200.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "incomplete_technical_specifications",
+      "nome": "Ficha técnica incompleta",
+      "gravidade": "media",
+      "descricao": "Faltam atributos importantes da categoria na ficha técnica.",
+      "acao": "Preencher os atributos obrigatórios e os de maior relevância da categoria.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "catalog_low_quality",
+      "nome": "Baixa qualidade de catálogo",
+      "gravidade": "media",
+      "descricao": "O anúncio de catálogo tem qualidade abaixo do esperado pelo ML.",
+      "acao": "Completar ficha, fotos e descrição do anúncio.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "incomplete_compatibilities",
+      "nome": "Compatibilidades incompletas",
+      "gravidade": "media",
+      "descricao": "Autopeças: faltam veículos compatíveis.",
+      "acao": "Completar a lista de compatibilidades.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "pending_compatibilities",
+      "nome": "Compatibilidades pendentes",
+      "gravidade": "media",
+      "descricao": "Autopeças: compatibilidades ainda não informadas.",
+      "acao": "Informar os veículos compatíveis.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    },
+    {
+      "tag": "only_html_description",
+      "nome": "Descrição só em HTML",
+      "gravidade": "media",
+      "descricao": "A descrição está só em HTML, o que atrapalha a busca.",
+      "acao": "Cadastrar a descrição em texto simples.",
+      "buscar_na_pagina": false,
+      "motivo_oficial": false
+    }
+  ],
+  "sub_status": [
+    {
+      "tag": "forbidden",
+      "nome": "Desativado pelo Mercado Livre",
+      "gravidade": "critica",
+      "descricao": "O ML desativou o anúncio.",
+      "acao": "Ver o motivo da moderação. Normalmente é preciso refazer o anúncio.",
+      "motivo_oficial": true
+    },
+    {
+      "tag": "waiting_for_patch",
+      "nome": "Pausado: precisa corrigir",
+      "gravidade": "critica",
+      "descricao": "O ML encontrou infrações e o anúncio só volta depois de corrigido.",
+      "acao": "Corrigir o que o motivo aponta e reativar o anúncio.",
+      "motivo_oficial": true
+    },
+    {
+      "tag": "warning",
+      "nome": "Advertência de moderação",
+      "gravidade": "alta",
+      "descricao": "O anúncio recebeu uma advertência da moderação.",
+      "acao": "Corrigir o que o motivo aponta antes que vire penalidade.",
+      "motivo_oficial": true
+    },
+    {
+      "tag": "held",
+      "nome": "Em revisão pelo Mercado Livre",
+      "gravidade": "alta",
+      "descricao": "O anúncio está retido em revisão.",
+      "acao": "Acompanhar; se não for liberado, ver o motivo da moderação.",
+      "motivo_oficial": true
+    },
+    {
+      "tag": "suspended",
+      "nome": "Suspenso",
+      "gravidade": "critica",
+      "descricao": "O anúncio foi suspenso.",
+      "acao": "Ver o motivo da moderação e corrigir ou refazer.",
+      "motivo_oficial": true
+    }
+  ]
+}
